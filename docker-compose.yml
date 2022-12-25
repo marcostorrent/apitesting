@@ -1,0 +1,15 @@
+version: "3.9.1"
+services:
+  pactum:
+    image: "pactumjs/flows:latest"
+    container_name: pactum
+    ports:
+      - "8080:8080"
+    environment:
+      - "DB_HOST=mongo"
+    volumes:
+      - ./tests:/pactum/captain/tests
+      - "./scripts/addScriptsToComposer.sh:/pactum/captain/addScriptsToComposer.sh"
+      - "./scripts/package-pactum.json:/pactum/captain/package.json"
+  mongo:
+    image: "mongo:4.2.12"

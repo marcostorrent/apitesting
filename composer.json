@@ -1,0 +1,9 @@
+{
+    "scripts": {
+        "pwd": "docker  exec -t pactum  bash -c \"cd pactum && pwd\"",
+        "tests/component": "docker  exec -t pactum  bash -c \"cd pactum && cd captain && npm run component\"",
+        "tests/integration": "docker  exec -t pactum  bash -c \"cd pactum && cd captain && npm run integration\"",
+        "bash": "docker  exec -it pactum  bash"
+
+    }
+}
